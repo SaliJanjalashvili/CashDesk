@@ -638,7 +638,8 @@ body {
   transition: background-color 0.3s ease;
 }
 
-.transaction-item:last-child {
+/* Remove border from the last transaction item in the entire list */
+.transactions-list .transaction-item:last-child {
   border-bottom: none;
 }
 
@@ -690,6 +691,9 @@ body {
 }
 
 .load-more-section {
+  display: flex;
+  justify-content: center;
+  height: 46px;
   text-align: center;
   margin-top: 2rem;
 }
@@ -707,6 +711,39 @@ body {
 
 .load-more-btn:hover {
   background: var(--secondary-color);
+}
+
+/* Load More Functionality */
+.load-more-checkbox {
+  display: none;
+}
+
+.additional-transactions {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+
+.load-more-checkbox:checked ~ .transactions-list .additional-transactions {
+  max-height: 1000px;
+  opacity: 1;
+}
+
+/* Update button text and appearance */
+.load-more-btn {
+  font-size: 0;
+  position: absolute;
+}
+
+.load-more-btn::before {
+  content: "Load More Transactions";
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.load-more-checkbox:checked ~ .load-more-section .load-more-btn::before {
+  content: "Show Less Transactions";
 }
 
 /* Dark Theme Toggle Logic */
