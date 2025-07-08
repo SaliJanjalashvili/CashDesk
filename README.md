@@ -1,4 +1,4 @@
-# Banking Dashboard
+# MoneyMate - Banking Dashboard
 
 A responsive banking dashboard built with pure HTML and CSS, featuring modern design, dark/light theme toggle, and mobile-first responsive design.
 
