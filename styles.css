@@ -582,7 +582,7 @@ body {
   padding: 0.75rem;
   border: 1px solid var(--border-color);
   border-radius: 0.5rem;
-  background-color: #192334;
+  background-color: var(--bg-primary);
   color: var(--text-primary);
   font-size: 0.875rem;
   cursor: pointer;
@@ -625,7 +625,7 @@ body {
   padding: 0.75rem 2.5rem 0.75rem 1rem;
   border: 1px solid var(--border-color);
   border-radius: 0.5rem;
-  background-color: #192334;
+  background-color: var(--bg-primary);
   color: var(--text-primary);
   font-size: 0.875rem;
   width: 250px;
@@ -788,7 +788,13 @@ body:has(.theme-checkbox:checked) {
 
 .theme-checkbox:checked ~ .container .filter-select,
 body:has(.theme-checkbox:checked) .filter-select {
+  background-color: #192334;
   background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e");
+}
+
+.theme-checkbox:checked ~ .container .search-input,
+body:has(.theme-checkbox:checked) .search-input {
+  background-color: #192334;
 }
 
 /* Responsive Design */
