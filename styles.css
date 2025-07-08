@@ -159,6 +159,7 @@ body {
 .theme-label {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   background-color: var(--bg-tertiary);
   border-radius: 2rem;
   padding: 0.25rem;
@@ -167,6 +168,7 @@ body {
   width: 60px;
   height: 30px;
   position: relative;
+  border: 2px solid var(--border-color);
 }
 
 .theme-label::before {
@@ -177,25 +179,34 @@ body {
   border-radius: 50%;
   background-color: var(--primary-color);
   transition: transform 0.3s ease;
-  transform: translateX(4px);
+  transform: translateX(2px);
+  box-shadow: var(--shadow-light);
+  top: 2px;
+  left: 0;
 }
 
-.theme-checkbox:checked + .theme-label::before {
-  transform: translateX(32px);
+.theme-checkbox:checked ~ .container .theme-label::before {
+  transform: translateX(30px);
 }
 
 .sun-icon,
 .moon-icon {
   font-size: 0.75rem;
   z-index: 1;
+  position: relative;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .sun-icon {
-  margin-left: 0.25rem;
+  width: 17px;
 }
 
 .moon-icon {
-  margin-right: 0.25rem;
+  width: 22px;
 }
 
 /* Main Content */
