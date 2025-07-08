@@ -3,9 +3,7 @@
   /* Light Theme Colors */
   --primary-color: #2563eb;
   --secondary-color: #1e40af;
-  --accent-color: #3b82f6;
   --success-color: #059669;
-  --warning-color: #d97706;
   --error-color: #dc2626;
 
   --bg-primary: #ffffff;
@@ -24,9 +22,8 @@
   --shadow-large: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
 
   --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  --gradient-secondary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-  --gradient-success: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-  --gradient-warning: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+  --gradient-secondary: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  --gradient-tertiary: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
 }
 
 /* Dark Theme Colors */
@@ -298,11 +295,11 @@ body {
 }
 
 .account-card.savings::before {
-  background: var(--gradient-success);
+  background: var(--gradient-secondary);
 }
 
 .account-card.credit::before {
-  background: var(--gradient-warning);
+  background: var(--gradient-tertiary);
 }
 
 .account-card:hover {
@@ -713,10 +710,18 @@ body {
   font-weight: 500;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  font-size: 0;
+  position: absolute;
 }
 
 .load-more-btn:hover {
   background: var(--secondary-color);
+}
+
+.load-more-btn::before {
+  content: "Load More Transactions";
+  font-size: 0.875rem;
+  font-weight: 500;
 }
 
 /* Load More Functionality */
@@ -736,46 +741,14 @@ body {
   opacity: 1;
 }
 
-/* Update button text and appearance */
-.load-more-btn {
-  font-size: 0;
-  position: absolute;
-}
-
-.load-more-btn::before {
-  content: "Load More Transactions";
-  font-size: 0.875rem;
-  font-weight: 500;
-}
-
 .load-more-checkbox:checked ~ .load-more-section .load-more-btn::before {
   content: "Show Less Transactions";
 }
 
 /* Dark Theme Toggle Logic */
+/* Dark Theme Implementation */
 .theme-checkbox:checked ~ .container,
-.theme-checkbox:checked ~ .container * {
-  --bg-primary: #0f172a;
-  --bg-secondary: #1e293b;
-  --bg-tertiary: #334155;
-  --bg-card: #1e293b;
-
-  --text-primary: #f1f5f9;
-  --text-secondary: #cbd5e1;
-  --text-muted: #94a3b8;
-
-  --border-color: #334155;
-  --border-light: #475569;
-  --shadow-light: 0 1px 3px 0 rgba(0, 0, 0, 0.3), 0 1px 2px 0 rgba(0, 0, 0, 0.2);
-  --shadow-medium: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
-  --shadow-large: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.2);
-}
-
-.theme-checkbox:checked ~ .container .filter-select {
-  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e");
-}
-
-/* Alternative approach for better browser support */
+.theme-checkbox:checked ~ .container *,
 body:has(.theme-checkbox:checked) {
   --bg-primary: #0f172a;
   --bg-secondary: #1e293b;
@@ -793,6 +766,7 @@ body:has(.theme-checkbox:checked) {
   --shadow-large: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.2);
 }
 
+.theme-checkbox:checked ~ .container .filter-select,
 body:has(.theme-checkbox:checked) .filter-select {
   background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e");
 }
