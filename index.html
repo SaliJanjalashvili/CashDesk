@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Banking Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <input type="checkbox" id="theme-switch" class="theme-checkbox">
+  <div class="container">
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+      <div class="nav-brand">
+        <h2>BankDash</h2>
+      </div>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link active">Dashboard</a>
+        <a href="transactions.html" class="nav-link">Transactions</a>
+      </div>
+      <div class="user-profile">
+        <div class="profile-pic">
+          <span>JS</span>
+        </div>
+        <div class="profile-info">
+          <span class="username">John Smith</span>
+          <span class="user-email">john.smith@email.com</span>
+        </div>
+      </div>
+      <div class="theme-toggle">
+        <label for="theme-switch" class="theme-label">
+          <span class="sun-icon">☀️</span>
+          <span class="moon-icon">🌙</span>
+        </label> 
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <!-- Welcome Section -->
+      <section class="welcome-section">
+        <h1>Welcome back, John!</h1>
+        <p>Here's your financial overview for today</p>
+      </section>
+
+      <!-- Bank Accounts Section -->
+      <section class="accounts-section">
+        <h2>Your Accounts</h2>
+        <div class="accounts-grid">
+          <div class="account-card primary">
+            <div class="card-header">
+              <span class="card-type">Primary Account</span>
+              <span class="card-number">•••• 4532</span>
+            </div>
+            <div class="card-balance">
+              <span class="balance-label">Available Balance</span>
+              <span class="balance-amount">$12,450.80</span>
+            </div>
+            <div class="card-footer">
+              <span class="card-holder">John Smith</span>
+              <span class="card-expiry">12/26</span>
+            </div>
+          </div>
+
+          <div class="account-card savings">
+            <div class="card-header">
+              <span class="card-type">Savings Account</span>
+              <span class="card-number">•••• 7891</span>
+            </div>
+            <div class="card-balance">
+              <span class="balance-label">Available Balance</span>
+              <span class="balance-amount">$8,230.45</span>
+            </div>
+            <div class="card-footer">
+              <span class="card-holder">John Smith</span>
+              <span class="card-expiry">08/27</span>
+            </div>
+          </div>
+
+          <div class="account-card credit">
+            <div class="card-header">
+              <span class="card-type">Credit Card</span>
+              <span class="card-number">•••• 2468</span>
+            </div>
+            <div class="card-balance">
+              <span class="balance-label">Available Credit</span>
+              <span class="balance-amount">$4,750.00</span>
+            </div>
+            <div class="card-footer">
+              <span class="card-holder">John Smith</span>
+              <span class="card-expiry">03/28</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Money Spent Section -->
+      <section class="spending-section">
+        <h2>Money Spent This Month</h2>
+        <div class="spending-overview">
+          <div class="spending-card">
+            <div class="spending-header">
+              <h3>Total Spent</h3>
+              <span class="spending-amount">$2,840.60</span>
+            </div>
+            <div class="spending-progress">
+              <div class="progress-bar">
+                <div class="progress-fill" style="width: 68%"></div>
+              </div>
+              <span class="progress-text">68% of monthly budget</span>
+            </div>
+          </div>
+
+          <div class="spending-categories">
+            <div class="category-item">
+              <div class="category-icon food">🍽️</div>
+              <div class="category-info">
+                <span class="category-name">Food & Dining</span>
+                <span class="category-amount">$840.30</span>
+              </div>
+              <div class="category-bar">
+                <div class="category-progress" style="width: 30%"></div>
+              </div>
+            </div>
+
+            <div class="category-item">
+              <div class="category-icon shopping">🛍️</div>
+              <div class="category-info">
+                <span class="category-name">Shopping</span>
+                <span class="category-amount">$650.80</span>
+              </div>
+              <div class="category-bar">
+                <div class="category-progress" style="width: 23%"></div>
+              </div>
+            </div>
+
+            <div class="category-item">
+              <div class="category-icon transport">🚗</div>
+              <div class="category-info">
+                <span class="category-name">Transportation</span>
+                <span class="category-amount">$420.50</span>
+              </div>
+              <div class="category-bar">
+                <div class="category-progress" style="width: 15%"></div>
+              </div>
+            </div>
+
+            <div class="category-item">
+              <div class="category-icon entertainment">🎬</div>
+              <div class="category-info">
+                <span class="category-name">Entertainment</span>
+                <span class="category-amount">$320.90</span>
+              </div>
+              <div class="category-bar">
+                <div class="category-progress" style="width: 11%"></div>
+              </div>
+            </div>
+
+            <div class="category-item">
+              <div class="category-icon utilities">⚡</div>
+              <div class="category-info">
+                <span class="category-name">Utilities</span>
+                <span class="category-amount">$608.10</span>
+              </div>
+              <div class="category-bar">
+                <div class="category-progress" style="width: 21%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Quick Actions -->
+      <section class="quick-actions">
+        <h2>Quick Actions</h2>
+        <div class="actions-grid">
+          <button class="action-btn">
+            <span class="action-icon">💳</span>
+            <span class="action-text">Transfer Money</span>
+          </button>
+          <button class="action-btn">
+            <span class="action-icon">📱</span>
+            <span class="action-text">Pay Bills</span>
+          </button>
+          <button class="action-btn">
+            <span class="action-icon">📊</span>
+            <span class="action-text">View Reports</span>
+          </button>
+          <button class="action-btn">
+            <span class="action-icon">⚙️</span>
+            <span class="action-text">Settings</span>
+          </button>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+
+</html>
