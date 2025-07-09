@@ -1684,6 +1684,72 @@ body:has(.theme-checkbox:checked) {
   .summary-stat .stat-value {
     font-size: 1.25rem;
   }
+
+  /* Cards Page Mobile Styles */
+  .cards-overview .cards-list {
+    gap: var(--spacing-md);
+  }
+
+  .controls-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+  }
+
+  .control-item {
+    padding: var(--spacing-md);
+    gap: var(--spacing-sm);
+  }
+
+  .control-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .control-icon svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .control-info h3 {
+    font-size: 0.9375rem;
+  }
+
+  .control-info p {
+    font-size: 0.8125rem;
+  }
+
+  .toggle-label {
+    width: 40px;
+    height: 20px;
+    border-radius: 10px;
+  }
+
+  .toggle-label::after {
+    width: 16px;
+    height: 16px;
+  }
+
+  .toggle-checkbox:checked + .toggle-label::after {
+    transform: translateX(20px);
+  }
+
+  .transactions-by-card {
+    gap: var(--spacing-lg);
+  }
+
+  .card-transaction-group .group-header {
+    padding: var(--spacing-md);
+  }
+
+  .add-card-btn {
+    padding: var(--spacing-sm) var(--spacing-md);
+    font-size: 0.8125rem;
+  }
+
+  .add-card-btn svg {
+    width: 16px;
+    height: 16px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -1772,4 +1838,237 @@ a:focus {
     box-shadow: none;
     border: 1px solid #ccc;
   }
+}
+
+/* Cards Page Styles */
+
+/* Cards Overview */
+.cards-overview {
+  margin-bottom: var(--spacing-2xl);
+}
+
+.cards-overview .section-header {
+  margin-bottom: var(--spacing-lg);
+}
+
+.add-card-btn {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: var(--text-inverse);
+  border: none;
+  padding: var(--spacing-md) var(--spacing-lg);
+  border-radius: var(--radius-lg);
+  font-weight: 500;
+  cursor: pointer;
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+  font-size: 0.875rem;
+  transform-origin: center;
+  outline: none;
+}
+
+.add-card-btn:focus {
+  outline: none;
+}
+
+.add-card-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.add-card-btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* Cards List Layout */
+.cards-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+/* Card Controls */
+.card-controls {
+  margin-bottom: var(--spacing-2xl);
+}
+
+.controls-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-lg);
+}
+
+.control-item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  padding: var(--spacing-lg);
+  background: var(--bg-card);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-fast);
+}
+
+.control-item:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.control-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: white;
+  flex-shrink: 0;
+  box-shadow: var(--shadow-sm);
+}
+
+.control-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.control-info {
+  flex: 1;
+}
+
+.control-info h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-xs);
+}
+
+.control-info p {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.control-toggle {
+  flex-shrink: 0;
+}
+
+.control-action {
+  flex-shrink: 0;
+}
+
+.action-btn {
+  background: var(--primary-color);
+  color: var(--text-inverse);
+  border: none;
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--radius-md);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  font-size: 0.875rem;
+}
+
+.action-btn:hover {
+  background: var(--secondary-color);
+  transform: translateY(-1px);
+}
+
+/* Toggle Switch */
+.toggle-checkbox {
+  display: none;
+}
+
+.toggle-label {
+  display: inline-block;
+  width: 48px;
+  height: 24px;
+  background: var(--bg-tertiary);
+  border-radius: 12px;
+  position: relative;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  border: 1px solid var(--border-color);
+}
+
+.toggle-label::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 18px;
+  height: 18px;
+  background: white;
+  border-radius: 50%;
+  transition: all var(--transition-normal);
+  box-shadow: var(--shadow-sm);
+}
+
+.toggle-checkbox:checked + .toggle-label {
+  background: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.toggle-checkbox:checked + .toggle-label::after {
+  transform: translateX(24px);
+}
+
+/* Card Transactions */
+.card-transactions {
+  margin-bottom: var(--spacing-2xl);
+}
+
+.transactions-by-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+}
+
+.card-transaction-group {
+  background: var(--bg-card);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border-color);
+  overflow: hidden;
+}
+
+.card-transaction-group .group-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-lg);
+  background: var(--bg-tertiary);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.card-info-mini {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.card-name {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.card-number-mini {
+  font-family: "Courier New", monospace;
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  letter-spacing: 0.1em;
+}
+
+.card-total {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.card-transaction-group .transactions-list {
+  background: var(--bg-card);
 }
