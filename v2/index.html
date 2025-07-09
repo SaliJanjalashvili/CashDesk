@@ -61,17 +61,56 @@
 
       <div class="nav-actions">
         <div class="theme-toggle">
-          <label for="theme-toggle" class="theme-label">
-            <span class="sun-icon">☀️</span>
-            <span class="moon-icon">🌙</span>
+          <label for="theme-toggle" class="theme-button">
+            <svg class="theme-icon light-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.166a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75.75zM17.834 18.894a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.06l1.59 1.591zM12 18a.75.75 0 01.75.75V21a.75.75 0 01-1.5 0v-2.25A.75.75 0 0112 18zM7.758 17.303a.75.75 0 00-1.061-1.06l-1.591 1.59a.75.75 0 001.06 1.061l1.591-1.59zM6 12a.75.75 0 01-.75.75H3a.75.75 0 010-1.5h2.25A.75.75 0 016 12zM6.697 7.757a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 00-1.061 1.06l1.59 1.591z" />
+            </svg>
+            <svg class="theme-icon dark-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path fill-rule="evenodd"
+                d="M9.528 1.718a.75.75 0 01.162.819A8.97 8.97 0 009 6a9 9 0 009 9 8.97 8.97 0 003.463-.69.75.75 0 01.981.98 10.503 10.503 0 01-9.694 6.46c-5.799 0-10.5-4.701-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 01.818.162z"
+                clip-rule="evenodd" />
+            </svg>
           </label>
         </div>
 
         <div class="user-profile">
           <div class="profile-avatar">
-            <img
-              src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMjAiIGN5PSIyMCIgcj0iMjAiIGZpbGw9IiM2NjdFRUEiLz4KPGNpcmNsZSBjeD0iMjAiIGN5PSIxNiIgcj0iNiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTggMzJDOCAyNi40NzcyIDEyLjQ3NzIgMjIgMTggMjJIMjJDMjcuNTIyOCAyMiAzMiAyNi40NzcyIDMyIDMyVjM0SDhWMzJaIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K"
-              alt="Profile">
+            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="profileGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" style="stop-color:#6366f1;stop-opacity:1" />
+                  <stop offset="50%" style="stop-color:#8b5cf6;stop-opacity:1" />
+                  <stop offset="100%" style="stop-color:#06b6d4;stop-opacity:1" />
+                </linearGradient>
+                <linearGradient id="avatarHighlight" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" style="stop-color:rgba(255,255,255,0.4);stop-opacity:1" />
+                  <stop offset="50%" style="stop-color:rgba(255,255,255,0.8);stop-opacity:1" />
+                  <stop offset="100%" style="stop-color:rgba(255,255,255,0.4);stop-opacity:1" />
+                </linearGradient>
+              </defs>
+              <!-- Background circle with enhanced gradient -->
+              <circle cx="20" cy="20" r="20" fill="url(#profileGradient)" />
+
+              <!-- Geometric avatar design -->
+              <g transform="translate(20,20)">
+                <!-- Head (hexagon) -->
+                <polygon points="-4,-8 4,-8 6,-4 4,0 -4,0 -6,-4" fill="white" opacity="0.95" />
+
+                <!-- Body (diamond/rhombus) -->
+                <polygon points="-6,2 0,-2 6,2 4,8 -4,8" fill="white" opacity="0.95" />
+
+                <!-- Shoulders accent -->
+                <polygon points="-8,4 -6,2 -4,8 -6,8" fill="white" opacity="0.7" />
+                <polygon points="8,4 6,2 4,8 6,8" fill="white" opacity="0.7" />
+              </g>
+
+              <!-- Subtle highlight overlay -->
+              <circle cx="20" cy="20" r="19" fill="url(#avatarHighlight)" opacity="0.3" />
+
+              <!-- Border ring -->
+              <circle cx="20" cy="20" r="19" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1" />
+            </svg>
           </div>
           <div class="profile-info">
             <span class="profile-name">Sali Janjalashvili</span>
