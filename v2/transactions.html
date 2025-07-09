@@ -197,6 +197,9 @@
 
       <!-- Transactions List -->
       <section class="transactions-section">
+        <!-- Load More Functionality -->
+        <input type="checkbox" id="load-more-toggle" class="load-more-checkbox">
+
         <div class="transactions-container">
           <!-- Today -->
           <div class="transaction-group">
@@ -492,9 +495,118 @@
             </div>
           </div>
 
+          <!-- Additional Transactions (Initially Hidden) -->
+          <div class="additional-transactions">
+            <!-- December 10 -->
+            <div class="transaction-group">
+              <div class="group-header">
+                <h3>December 10, 2024</h3>
+                <span class="group-total">-₾89.45</span>
+              </div>
+
+              <div class="transaction-item">
+                <div class="transaction-icon">
+                  <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M8.1 13.34l2.83-2.83L3.91 3.5c-1.56 1.56-1.56 4.09 0 5.66l4.19 4.18zm6.78-1.81c1.53.71 3.68.21 5.27-1.38 1.91-1.91 2.28-4.65.81-6.12-1.46-1.46-4.20-1.10-6.12.81-1.59 1.59-2.09 3.74-1.38 5.27L3.7 19.87l1.41 1.41L12 14.41l6.88 6.88 1.41-1.41L13.41 13l1.47-1.47z" />
+                  </svg>
+                </div>
+                <div class="transaction-details">
+                  <span class="transaction-name">Burger King</span>
+                  <span class="transaction-category">Food & Dining</span>
+                  <span class="transaction-time">1:15 PM</span>
+                </div>
+                <span class="transaction-amount negative">-₾18.90</span>
+              </div>
+
+              <div class="transaction-item">
+                <div class="transaction-icon">
+                  <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.22.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z" />
+                  </svg>
+                </div>
+                <div class="transaction-details">
+                  <span class="transaction-name">Metro Card Top-up</span>
+                  <span class="transaction-category">Transportation</span>
+                  <span class="transaction-time">9:30 AM</span>
+                </div>
+                <span class="transaction-amount negative">-₾25.00</span>
+              </div>
+
+              <div class="transaction-item">
+                <div class="transaction-icon">
+                  <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M7 18c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12L8.1 13h7.45c.75 0 1.41-.41 1.75-1.03L21.7 4H5.21l-.94-2H1zm16 16c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z" />
+                  </svg>
+                </div>
+                <div class="transaction-details">
+                  <span class="transaction-name">Pharmacy</span>
+                  <span class="transaction-category">Healthcare</span>
+                  <span class="transaction-time">6:45 PM</span>
+                </div>
+                <span class="transaction-amount negative">-₾45.55</span>
+              </div>
+            </div>
+
+            <!-- December 9 -->
+            <div class="transaction-group">
+              <div class="group-header">
+                <h3>December 9, 2024</h3>
+                <span class="group-total">+₾1,150.00</span>
+              </div>
+
+              <div class="transaction-item">
+                <div class="transaction-icon">
+                  <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+                  </svg>
+                </div>
+                <div class="transaction-details">
+                  <span class="transaction-name">Freelance Payment</span>
+                  <span class="transaction-category">Income</span>
+                  <span class="transaction-time">10:00 AM</span>
+                </div>
+                <span class="transaction-amount positive">+₾1,200.00</span>
+              </div>
+
+              <div class="transaction-item">
+                <div class="transaction-icon">
+                  <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M8.1 13.34l2.83-2.83L3.91 3.5c-1.56 1.56-1.56 4.09 0 5.66l4.19 4.18zm6.78-1.81c1.53.71 3.68.21 5.27-1.38 1.91-1.91 2.28-4.65.81-6.12-1.46-1.46-4.20-1.10-6.12.81-1.59 1.59-2.09 3.74-1.38 5.27L3.7 19.87l1.41 1.41L12 14.41l6.88 6.88 1.41-1.41L13.41 13l1.47-1.47z" />
+                  </svg>
+                </div>
+                <div class="transaction-details">
+                  <span class="transaction-name">Lunch Break</span>
+                  <span class="transaction-category">Food & Dining</span>
+                  <span class="transaction-time">2:30 PM</span>
+                </div>
+                <span class="transaction-amount negative">-₾32.50</span>
+              </div>
+
+              <div class="transaction-item">
+                <div class="transaction-icon">
+                  <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M18 3v2h-2V3H8v2H6V3H4v18h2v-2h2v2h8v-2h2v2h2V3h-2zM8 17H6v-2h2v2zm0-4H6v-2h2v2zm0-4H6V7h2v2zm10 8h-2v-2h2v2zm0-4h-2v-2h2v2zm0-4h-2V7h2v2z" />
+                  </svg>
+                </div>
+                <div class="transaction-details">
+                  <span class="transaction-name">YouTube Premium</span>
+                  <span class="transaction-category">Entertainment</span>
+                  <span class="transaction-time">Monthly</span>
+                </div>
+                <span class="transaction-amount negative">-₾17.50</span>
+              </div>
+            </div>
+          </div>
+
           <!-- Load More Button -->
           <div class="load-more-section">
-            <button class="load-more-btn">Load More Transactions</button>
+            <label for="load-more-toggle" class="load-more-btn"></label>
           </div>
         </div>
       </section>

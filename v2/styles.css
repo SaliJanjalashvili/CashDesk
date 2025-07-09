@@ -1371,6 +1371,27 @@ body {
   color: var(--text-primary);
 }
 
+/* Load More Functionality */
+.load-more-checkbox {
+  display: none;
+}
+
+.additional-transactions {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: all var(--transition-slow);
+}
+
+.load-more-checkbox:checked ~ .transactions-container .additional-transactions {
+  max-height: 2000px;
+  opacity: 1;
+}
+
+.load-more-checkbox:checked ~ .transactions-container .load-more-section .load-more-btn::before {
+  content: "Show Less Transactions";
+}
+
 /* Load More Button */
 .load-more-section {
   padding: var(--spacing-lg);
@@ -1388,11 +1409,18 @@ body {
   cursor: pointer;
   transition: all var(--transition-normal);
   font-size: 0.875rem;
+  display: inline-block;
+  text-decoration: none;
+  user-select: none;
 }
 
 .load-more-btn:hover {
   transform: translateY(-2px);
   box-shadow: var(--shadow-lg);
+}
+
+.load-more-btn::before {
+  content: "Load More Transactions";
 }
 
 /* Dark Theme */
