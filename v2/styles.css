@@ -86,18 +86,42 @@ body {
   top: 0;
   z-index: 1000;
   border-bottom: 1px solid var(--border-color);
+  gap: var(--spacing-lg);
 }
 
 .nav-brand {
   display: flex;
   align-items: center;
-  cursor: pointer;
-  text-decoration: none;
-  transition: transform var(--transition-fast);
+  gap: var(--spacing-md);
 }
 
-.nav-brand:hover {
-  transform: scale(1.05);
+.menu-toggle-btn {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  color: var(--text-secondary);
+  box-shadow: var(--shadow-sm);
+}
+
+.menu-toggle-btn:hover {
+  background-color: var(--bg-card);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-sm);
+  border-color: var(--border-dark);
+  color: var(--primary-color);
+}
+
+.menu-toggle-btn svg {
+  width: 20px;
+  height: 20px;
+  transition: all var(--transition-fast);
 }
 
 .nav-brand h1 {
@@ -110,38 +134,114 @@ body {
   -webkit-text-fill-color: transparent;
   background-clip: text;
   margin: 0;
+  transition: transform var(--transition-fast);
+  cursor: pointer;
 }
 
-.nav-menu {
+.nav-brand h1:hover {
+  transform: scale(1.05);
+}
+
+/* Menu Toggle */
+.menu-checkbox {
+  display: none;
+}
+
+/* Slide-out Menu */
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1998;
+  opacity: 0;
+  visibility: hidden;
+  transition: all var(--transition-normal);
+  cursor: pointer;
+}
+
+.slide-menu {
+  position: fixed;
+  top: 0;
+  left: -300px;
+  width: 300px;
+  height: 100%;
+  background-color: var(--bg-card);
+  z-index: 1999;
+  transition: left var(--transition-normal);
+  box-shadow: var(--shadow-xl);
+  border-right: 1px solid var(--border-color);
+}
+
+.menu-header {
   display: flex;
-  gap: var(--spacing-lg);
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-lg) var(--spacing-xl);
+  border-bottom: 1px solid var(--border-color);
+  background-color: var(--bg-secondary);
 }
 
-.nav-link {
+.menu-header h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.menu-close {
+  width: 32px;
+  height: 32px;
   display: flex;
   align-items: center;
-  gap: var(--spacing-sm);
+  justify-content: center;
+  cursor: pointer;
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast);
+  color: var(--text-secondary);
+}
+
+.menu-close:hover {
+  background-color: var(--bg-tertiary);
+  color: var(--text-primary);
+}
+
+.menu-close svg {
+  width: 20px;
+  height: 20px;
+}
+
+.menu-content {
+  padding: var(--spacing-lg) 0;
+}
+
+.menu-link {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
   text-decoration: none;
   color: var(--text-secondary);
   font-weight: 500;
-  padding: var(--spacing-sm) var(--spacing-md);
-  border-radius: var(--radius-md);
+  padding: var(--spacing-md) var(--spacing-xl);
   transition: all var(--transition-normal);
   position: relative;
+  font-size: 0.875rem;
 }
 
-.nav-link:hover,
-.nav-link.active {
+.menu-link:hover,
+.menu-link.active {
   color: var(--primary-color);
-  background-color: var(--bg-tertiary);
+  background-color: var(--bg-secondary);
 }
 
-.nav-link:active {
+.menu-link:active {
   transform: none;
   transition: none;
 }
 
-.nav-icon {
+.menu-icon {
   font-size: 1.1rem;
   display: flex;
   align-items: center;
@@ -149,16 +249,26 @@ body {
   transition: all var(--transition-normal);
 }
 
-.nav-icon svg {
+.menu-icon svg {
   width: 1.1rem;
   height: 1.1rem;
   transition: all var(--transition-normal);
 }
 
+/* Show menu when checkbox is checked */
+.menu-checkbox:checked ~ .container .menu-overlay {
+  opacity: 1;
+  visibility: visible;
+}
+
+.menu-checkbox:checked ~ .container .slide-menu {
+  left: 0;
+}
+
 .nav-actions {
   display: flex;
   align-items: center;
-  gap: var(--spacing-lg);
+  gap: var(--spacing-md);
 }
 
 /* Theme Toggle */
@@ -191,9 +301,10 @@ body {
 }
 
 .theme-button:hover {
-  background-color: var(--bg-tertiary);
+  background-color: var(--bg-card);
   transform: translateY(-1px);
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-sm);
+  border-color: var(--border-dark);
 }
 
 .theme-button:active {
@@ -245,6 +356,7 @@ body {
   cursor: pointer;
   position: relative;
   overflow: hidden;
+  box-shadow: var(--shadow-sm);
 }
 
 .user-profile::before {
@@ -263,7 +375,7 @@ body {
 }
 
 .user-profile:hover {
-  background: var(--bg-tertiary);
+  background: var(--bg-card);
   transform: translateY(-0.5px);
   box-shadow: var(--shadow-sm);
   border-color: var(--border-dark);
@@ -1267,13 +1379,6 @@ body:has(.theme-checkbox:checked) {
 
   .nav-brand h1 {
     font-size: 1.5rem;
-  }
-
-  .nav-menu {
-    order: 3;
-    width: 100%;
-    justify-content: center;
-    margin-top: var(--spacing-md);
   }
 
   .nav-actions {
