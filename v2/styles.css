@@ -335,11 +335,11 @@ body {
 }
 
 /* Dark theme icon (moon) */
-.theme-checkbox:checked + .container .light-icon {
+.theme-checkbox:checked ~ .container .light-icon {
   display: none;
 }
 
-.theme-checkbox:checked + .container .dark-icon {
+.theme-checkbox:checked ~ .container .dark-icon {
   display: block;
 }
 
@@ -589,21 +589,21 @@ body {
 }
 
 .stat-icon {
-  width: 40px;
-  height: 40px;
+  width: 70px;
+  height: 80px;
   display: flex;
   align-items: center;
   justify-content: center;
   background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-lg);
   color: var(--text-inverse);
   flex-shrink: 0;
   box-shadow: var(--shadow-sm);
 }
 
 .stat-icon svg {
-  width: 18px;
-  height: 18px;
+  width: 28px;
+  height: 28px;
 }
 
 .stat-info {
