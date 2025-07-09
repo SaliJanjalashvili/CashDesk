@@ -248,31 +248,37 @@
 
         <!-- Budget Overview Card -->
         <div class="budget-overview">
-          <div class="budget-summary">
-            <div class="budget-item">
-              <span class="budget-label">Monthly Budget</span>
-              <span class="budget-amount">₾4,200.00</span>
+          <div class="budget-circle-container">
+            <div class="budget-circle">
+              <svg class="circle-progress" viewBox="0 0 120 120">
+                <circle cx="60" cy="60" r="54" fill="none" stroke="var(--border-color)" stroke-width="8" />
+                <circle cx="60" cy="60" r="54" fill="none" stroke="url(#budgetGradient)" stroke-width="8"
+                  stroke-linecap="round" stroke-dasharray="339.29" stroke-dashoffset="108.57" />
+                <defs>
+                  <linearGradient id="budgetGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" style="stop-color:var(--primary-color);stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:var(--secondary-color);stop-opacity:1" />
+                  </linearGradient>
+                </defs>
+              </svg>
+              <div class="circle-content">
+                <div class="circle-percentage">68%</div>
+                <div class="circle-label">Used</div>
+              </div>
             </div>
-            <div class="budget-item">
-              <span class="budget-label">Spent</span>
-              <span class="budget-spent">₾2,847.30</span>
-            </div>
-            <div class="budget-item">
-              <span class="budget-label">Remaining</span>
-              <span class="budget-remaining">₾1,352.70</span>
-            </div>
-            <div class="budget-item">
-              <span class="budget-label">Days Left</span>
-              <span class="budget-days">16 days</span>
-            </div>
-          </div>
-
-          <div class="budget-progress">
-            <div class="progress-track">
-              <div class="progress-bar" style="width: 68%"></div>
-            </div>
-            <div class="progress-info">
-              <span class="progress-text">68% of budget used</span>
+            <div class="budget-stats">
+              <div class="budget-stat">
+                <span class="stat-label">Budget</span>
+                <span class="stat-amount budget-total">₾4,200.00</span>
+              </div>
+              <div class="budget-stat">
+                <span class="stat-label">Spent</span>
+                <span class="stat-amount budget-spent">₾2,847.30</span>
+              </div>
+              <div class="budget-stat">
+                <span class="stat-label">Remaining (16 days)</span>
+                <span class="stat-amount budget-remaining">₾1,352.70</span>
+              </div>
             </div>
           </div>
         </div>
