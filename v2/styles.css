@@ -437,6 +437,15 @@ body {
   background: var(--bg-secondary);
 }
 
+.menu-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.1rem;
+  height: 1.1rem;
+  flex-shrink: 0;
+}
+
 .menu-icon svg {
   width: 1.1rem;
   height: 1.1rem;
