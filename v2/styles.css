@@ -382,8 +382,15 @@ body {
 
 .menu-header h2 {
   font-size: 1.25rem;
-  font-weight: 600;
-  color: var(--text-primary);
+  font-weight: 800;
+  color: var(--primary);
+  letter-spacing: -0.025em;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  transition: transform var(--transition);
+  cursor: pointer;
 }
 
 .menu-close {
