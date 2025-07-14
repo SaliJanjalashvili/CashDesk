@@ -1385,8 +1385,8 @@ body {
   color: var(--text-primary);
 }
 
-/* Load More Functionality */
-.load-more-checkbox {
+/* Show More Functionality */
+.show-more-checkbox {
   display: none;
 }
 
@@ -1397,22 +1397,22 @@ body {
   transition: all 0.5s ease;
 }
 
-.load-more-checkbox:checked ~ .transactions-container .additional-transactions {
+.show-more-checkbox:checked ~ .transactions-container .additional-transactions {
   max-height: 2000px;
   opacity: 1;
 }
 
-.load-more-checkbox:checked ~ .transactions-container .load-more-section .load-more-btn::before {
+.show-more-checkbox:checked ~ .transactions-container .show-more-section .show-more-btn::before {
   content: "Show Less Transactions";
 }
 
-.load-more-section {
+.show-more-section {
   padding: var(--space-lg);
   text-align: center;
   border-top: 1px solid var(--border-light);
 }
 
-.load-more-btn {
+.show-more-btn {
   background: linear-gradient(135deg, var(--primary), var(--secondary));
   color: var(--text-inverse);
   border: none;
@@ -1427,13 +1427,13 @@ body {
   user-select: none;
 }
 
-.load-more-btn:hover {
+.show-more-btn:hover {
   transform: translateY(-2px);
   box-shadow: var(--shadow-lg);
 }
 
-.load-more-btn::before {
-  content: "Load More Transactions";
+.show-more-btn::before {
+  content: "Show More Transactions";
 }
 
 /* CARDS PAGE */
